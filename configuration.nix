@@ -88,6 +88,8 @@
 	bitwarden-desktop
 	git
 	lazygit
+	tmux
+	ghostty
     ];
   };
 

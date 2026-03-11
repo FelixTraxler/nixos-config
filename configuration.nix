@@ -45,13 +45,13 @@
     LC_TIME = "de_AT.UTF-8";
   };
  
-  programs.hyprland.enable = true;
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
+  services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  # services.displayManager.gdm.enable = true;
-  # services.desktopManager.gnome.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.defaultSession = "hyprland";
+  programs.hyprland.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb = {

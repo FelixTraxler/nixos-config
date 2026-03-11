@@ -14,7 +14,13 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, nvf, home-manager }: {
+  outputs = {
+    self,
+    nixpkgs,
+    nixos-hardware,
+    nvf,
+    home-manager,
+  }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       modules = [
         ./configuration.nix

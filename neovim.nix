@@ -7,7 +7,6 @@
       vimAlias = true;
       lsp = {
         enable = true;
-
         formatOnSave = true;
       };
 
@@ -19,6 +18,12 @@
         # Languages that will be supported in default and maximal configurations.
         nix.enable = true;
         markdown.enable = true;
+      };
+
+      git = {
+        enable = true;
+        gitsigns.enable = true;
+        gitsigns.codeActions.enable = false; # throws an annoying debug message
       };
     };
   };

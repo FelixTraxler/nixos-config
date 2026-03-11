@@ -10,6 +10,13 @@
         formatOnSave = true;
       };
 
+      options = {
+        tabstop = 2;
+        shiftwidth = 2;
+        softtabstop = 2;
+        expandtab = true;
+      };
+
       languages = {
         enableFormat = true;
         enableTreesitter = true;

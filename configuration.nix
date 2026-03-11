@@ -44,19 +44,20 @@
     LC_TELEPHONE = "de_AT.UTF-8";
     LC_TIME = "de_AT.UTF-8";
   };
-
+ 
+  programs.hyprland.enable = true;
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  # services.displayManager.gdm.enable = true;
+  # services.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  # services.xserver.xkb = {
+  #  layout = "us";
+  #  variant = "";
+  # };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -123,6 +124,7 @@
     codex
     discord
     google-chrome
+    kitty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

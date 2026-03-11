@@ -101,6 +101,8 @@
     lazygit
     tmux
     ghostty
+    xclip
+    bat
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

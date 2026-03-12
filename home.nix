@@ -9,6 +9,14 @@
   programs = {
     home-manager.enable = true;
 
+    bash = {
+      enable = true;
+      shellAliases = {
+        nrs = "sudo nixos-rebuild switch --flake .";
+        btr = "upower -b | grep percentage";
+      };
+    };
+
     firefox = {
       enable = true;
 

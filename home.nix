@@ -38,5 +38,6 @@
   home.packages = [
     pkgs.htop
     pkgs.fortune
+    pkgs.tree
   ];
 }

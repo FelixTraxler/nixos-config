@@ -28,9 +28,12 @@
         nvf.nixosModules.default
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.felix = ./home.nix;
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.felix = ./home.nix;
+            backupFileExtension = "backup";
+          };
         }
       ];
     };

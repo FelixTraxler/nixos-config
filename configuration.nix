@@ -116,6 +116,8 @@
     discord
     google-chrome
     kitty
+    waybar
+    hyprpaper
   ];
 
   # Open ports in the firewall.

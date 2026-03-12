@@ -11,6 +11,9 @@
   networking.hostName = "nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Configure network proxy if necessary

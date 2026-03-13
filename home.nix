@@ -33,6 +33,10 @@
         };
       };
     };
+
+    wofi = {
+      enable = true;
+    };
   };
 
   home.file.".config/hypr".source = ./config/hypr;

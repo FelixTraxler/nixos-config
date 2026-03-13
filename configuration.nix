@@ -121,6 +121,7 @@
     kitty
     waybar
     hyprpaper
+    kdePackages.dolphin
   ];
 
   fonts.packages = with pkgs; [

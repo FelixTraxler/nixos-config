@@ -25,9 +25,7 @@
         "custom/sep",
         "battery",
         "custom/sep",
-        "clock",
-        "custom/sep",
-        "tray"
+        "clock"
     ],
 
     // Modules configuration
@@ -44,23 +42,17 @@
         "max-length": 40,
         "seperate-outputs": false
     },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
-    },
     "clock": {
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
+        "interval": 2,
         "format": "CPU: {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "Mem: {used}GiB"
+        "interval": 2,
+        "format": "Mem: {used:.1f}GiB"
     },
     "disk": {
         "interval": 60,
@@ -68,12 +60,13 @@
         "format": "Disk: {free}"
     },
     "battery": {
+        "interval": 2,
         "states": {
             "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "Bat: {capacity}% {icon} {time}",
+        "format": "{capacity}% {icon}  {power:.0f}W",
         "format-plugged": "{capacity}% ",
         "format-alt": "Bat {capacity}%",
         "format-time": "{H}:{M}",

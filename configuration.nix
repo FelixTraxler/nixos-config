@@ -122,6 +122,7 @@
     waybar
     hyprpaper
     kdePackages.dolphin
+    spotify
   ];
 
   fonts.packages = with pkgs; [

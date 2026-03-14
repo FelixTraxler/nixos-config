@@ -101,6 +101,9 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       bitwarden-desktop
+      thunderbird
+      spotify
+      discord
     ];
   };
 
@@ -119,13 +122,11 @@
     bat
     tldr
     codex
-    discord
     google-chrome
     kitty
     waybar
     hyprpaper
     kdePackages.dolphin
-    spotify
     brightnessctl
 
     wl-clipboard

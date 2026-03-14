@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  snip = pkgs.writeShellScriptBin "snip" ''
+    grim -l 0 -g "$(slurp)" - | wl-copy
+  '';
+in {
   home = {
     username = "felix";
     homeDirectory = "/home/felix";
@@ -14,7 +18,6 @@
       shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake .";
         btr = "upower -b | grep percentage";
-        snip = "grim -l 0 -g \"$(slurp)\" - | wl-copy";
       };
     };
 
@@ -44,6 +47,7 @@
   home.file.".config/waybar".source = ./config/waybar;
 
   home.packages = [
+    snip
     pkgs.htop
     pkgs.fortune
     pkgs.tree

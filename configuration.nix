@@ -126,6 +126,7 @@
     hyprpaper
     kdePackages.dolphin
     spotify
+    brightnessctl
   ];
 
   fonts.packages = with pkgs; [

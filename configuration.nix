@@ -127,6 +127,10 @@
     kdePackages.dolphin
     spotify
     brightnessctl
+
+    wl-clipboard
+    slurp
+    grim
   ];
 
   fonts.packages = with pkgs; [

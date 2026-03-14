@@ -14,6 +14,7 @@
       shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake .";
         btr = "upower -b | grep percentage";
+        snip = "grim -l 0 -g \"$(slurp)\" - | wl-copy";
       };
     };
 

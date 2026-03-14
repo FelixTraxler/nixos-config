@@ -66,32 +66,26 @@ button:hover {
 
 #clock {
     color: @cyn;
-    border-bottom: 4px solid @cyn;
 }
 
 #battery {
     color: @mag;
-    border-bottom: 4px solid @mag;
 }
 
 #disk {
     color: @ylw;
-    border-bottom: 4px solid @ylw;
 }
 
 #memory {
     color: @mag;
-    border-bottom: 4px solid @mag;
 }
 
 #cpu {
     color: @grn;
-    border-bottom: 4px solid @grn;
 }
 
 #network {
     color: @blu;
-    border-bottom: 4px solid @blu;
 }
 
 #network.disconnected {

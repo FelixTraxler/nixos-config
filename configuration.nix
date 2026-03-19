@@ -118,7 +118,6 @@
     lazygit
     tmux
     ghostty
-    xclip
     bat
     tldr
     codex

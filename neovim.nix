@@ -5,6 +5,14 @@
     settings.vim = {
       viAlias = false;
       vimAlias = true;
+
+      clipboard = {
+        enable = true;
+        registers = "unnamedplus";
+        providers.wl-copy.enable = true;
+        providers.wl-copy.package = null;
+      };
+
       lsp = {
         enable = true;
         formatOnSave = true;

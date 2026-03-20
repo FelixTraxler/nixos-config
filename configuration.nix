@@ -127,6 +127,7 @@
     hyprpaper
     kdePackages.dolphin
     brightnessctl
+    lsof
 
     wl-clipboard
     slurp

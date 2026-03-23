@@ -23,7 +23,7 @@
         "custom/sep",
         "memory",
         "custom/sep",
-        "battery",
+        "custom/battery",
         "custom/sep",
         "clock"
     ],
@@ -59,18 +59,12 @@
         "path": "/",
         "format": "Disk: {free}"
     },
-    "battery": {
+    "custom/battery": {
         "interval": 2,
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}  {power:.0f}W",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "Bat {capacity}%",
-        "format-time": "{H}:{M}",
-        "format-icons": ["", "", "", "", ""]
+        "return-type": "json",
+        "exec": "bash ~/.config/waybar/scripts/battery-status.sh",
+        "format": "{}",
+        "tooltip": true
     },
     "network": {
         "format": "Online",

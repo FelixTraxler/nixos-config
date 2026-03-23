@@ -138,11 +138,9 @@
     nerd-fonts.jetbrains-mono
   ];
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  # Allow Expo Go / Metro from devices on the local network.
+  networking.firewall.allowedTCPPorts = [8081 19000 19001 19002];
+  networking.firewall.allowedUDPPorts = [19000 19001 19002];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

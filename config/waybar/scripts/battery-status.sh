@@ -46,11 +46,11 @@ sign=""
 status_class="unknown"
 case "$status" in
     Charging)
-        sign="-"
+        sign="+"
         status_class="charging"
         ;;
     Discharging)
-        sign="+"
+        sign="-"
         status_class="discharging"
         ;;
     Full)

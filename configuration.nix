@@ -131,6 +131,8 @@
     brightnessctl
     lsof
 
+    zoom-us
+
     wl-clipboard
     slurp
     grim

@@ -8,6 +8,12 @@ in {
     homeDirectory = "/home/felix";
 
     stateVersion = "25.11";
+
+    sessionPath = [
+      "$HOME/Android/Sdk/platform-tools"
+      "$HOME/Android/Sdk/emulator"
+      "$HOME/Android/Sdk/cmdline-tools/latest/bin"
+    ];
   };
 
   programs = {

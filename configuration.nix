@@ -98,7 +98,7 @@
   users.users.felix = {
     isNormalUser = true;
     description = "felix";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "kvm"];
     packages = with pkgs; [
       bitwarden-desktop
       thunderbird
@@ -123,6 +123,8 @@
     codex
     google-chrome
     kitty
+    android-studio
+    android-tools
     waybar
     hyprpaper
     kdePackages.dolphin

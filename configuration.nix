@@ -136,6 +136,8 @@
     wl-clipboard
     slurp
     grim
+
+    libreoffice-qt-fresh
   ];
 
   fonts.packages = with pkgs; [

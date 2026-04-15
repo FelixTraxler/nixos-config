@@ -120,7 +120,6 @@
     ghostty
     bat
     tldr
-    codex
     google-chrome
     kitty
     android-studio
@@ -138,6 +137,10 @@
     grim
 
     libreoffice-qt-fresh
+
+    codex
+    code-cursor
+    claude-code
   ];
 
   fonts.packages = with pkgs; [

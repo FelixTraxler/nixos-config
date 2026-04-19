@@ -128,6 +128,7 @@
     hyprpaper
     kdePackages.dolphin
     brightnessctl
+    playerctl
     lsof
 
     zoom-us

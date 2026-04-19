@@ -2,6 +2,13 @@
   snip = pkgs.writeShellScriptBin "snip" ''
     grim -l 0 -g "$(slurp)" - | wl-copy
   '';
+
+  zoomWayland = pkgs.writeShellScriptBin "zoom" ''
+    exec ${pkgs.zoom-us}/bin/zoom \
+      --enable-features=UseOzonePlatform,WaylandWindowDecorations \
+      --ozone-platform=wayland \
+      "$@"
+  '';
 in {
   home = {
     username = "felix";
@@ -55,9 +62,23 @@ in {
 
   home.file.".config/hypr".source = ./config/hypr;
   home.file.".config/waybar".source = ./config/waybar;
+  home.file.".local/share/applications/Zoom.desktop".text = ''
+    [Desktop Entry]
+    Name=Zoom Workplace
+    Comment=Zoom Video Conference
+    Exec=${zoomWayland}/bin/zoom %U
+    Icon=Zoom
+    Terminal=false
+    Type=Application
+    Categories=Network;Application;
+    StartupWMClass=zoom
+    MimeType=x-scheme-handler/zoommtg;x-scheme-handler/zoomus;x-scheme-handler/tel;x-scheme-handler/callto;x-scheme-handler/zoomphonecall;x-scheme-handler/zoomphonesms;x-scheme-handler/zoomcontactcentercall;application/x-zoom;
+    X-KDE-Protocols=zoommtg;zoomus;tel;callto;zoomphonecall;zoomphonesms;zoomcontactcentercall;
+  '';
 
   home.packages = [
     snip
+    zoomWayland
     pkgs.htop
     pkgs.fortune
     pkgs.tree

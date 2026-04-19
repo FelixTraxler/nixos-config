@@ -35,6 +35,11 @@
         markdown.enable = true;
       };
 
+      telescope = {
+        enable = true;
+        mappings.liveGrep = "<leader>fw";
+      };
+
       git = {
         enable = true;
         gitsigns.enable = true;

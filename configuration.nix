@@ -8,6 +8,37 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+    glib
+    nspr
+    nss
+    dbus
+    atk
+    cups
+    cairo
+    gtk3
+    pango
+    libX11
+    libXcomposite
+    libXdamage
+    libXext
+    libXfixes
+    libXrandr
+    libxcb
+    libXcursor
+    libXi
+    libXrender
+    libXtst
+    libXScrnSaver
+    libgbm
+    expat
+    libxkbcommon
+    alsa-lib
+  ];
+
   networking.hostName = "nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

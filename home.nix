@@ -34,6 +34,11 @@ in {
       };
     };
 
+    tmux = {
+      enable = true;
+      sensibleOnTop = true;
+    };
+
     firefox = {
       enable = true;
 

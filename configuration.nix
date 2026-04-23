@@ -149,7 +149,6 @@
     vscode
     git
     lazygit
-    tmux
     ghostty
     bat
     tldr

@@ -81,6 +81,8 @@
     # Enable the X11 windowing system.
     xserver.enable = true;
 
+    mullvad-vpn.enable = true;
+
     displayManager = {
       sddm.enable = true;
       sddm.wayland.enable = true;

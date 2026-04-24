@@ -37,6 +37,7 @@ in {
     tmux = {
       enable = true;
       sensibleOnTop = true;
+      shortcut = "a";
     };
 
     firefox = {

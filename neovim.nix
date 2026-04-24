@@ -37,7 +37,6 @@
 
       telescope = {
         enable = true;
-        mappings.liveGrep = "<leader>fw";
       };
 
       git = {

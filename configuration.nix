@@ -131,7 +131,7 @@
   users.users.felix = {
     isNormalUser = true;
     description = "felix";
-    extraGroups = ["networkmanager" "wheel" "kvm"];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       bitwarden-desktop
       thunderbird
@@ -154,8 +154,6 @@
     tldr
     google-chrome
     kitty
-    android-studio
-    android-tools
     waybar
     hyprpaper
     kdePackages.dolphin

@@ -13,6 +13,14 @@
         providers.wl-copy.package = null;
       };
 
+      keymaps = [
+        {
+          key = "<leader>e";
+          mode = "n";
+          action = ":Oil<CR>";
+        }
+      ];
+
       lsp = {
         enable = true;
         formatOnSave = true;
@@ -38,6 +46,8 @@
       telescope = {
         enable = true;
       };
+
+      utility.oil-nvim.enable = true;
 
       git = {
         enable = true;

@@ -41,6 +41,16 @@
         # Languages that will be supported in default and maximal configurations.
         nix.enable = true;
         markdown.enable = true;
+        typescript.enable = true;
+        html.enable = true;
+        bash.enable = true;
+        clang.enable = true;
+        css.enable = true;
+        java.enable = true;
+        json.enable = true;
+        python.enable = true;
+        typst.enable = true;
+        zig.enable = true;
       };
 
       telescope = {

@@ -19,6 +19,12 @@
           mode = "n";
           action = ":Oil<CR>";
         }
+        {
+          key = "<leader>r";
+          mode = "n";
+          action = ":edit!<CR>";
+          desc = "Reload file from disk";
+        }
       ];
 
       lsp = {

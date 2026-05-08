@@ -31,6 +31,7 @@
         shiftwidth = 2;
         softtabstop = 2;
         expandtab = true;
+        foldlevel = 99; # start with all folds open
       };
 
       languages = {
@@ -52,6 +53,8 @@
         typst.enable = true;
         zig.enable = true;
       };
+
+      ui.nvim-ufo.enable = true;
 
       telescope = {
         enable = true;

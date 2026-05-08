@@ -55,6 +55,19 @@
       };
 
       ui.nvim-ufo.enable = true;
+      ui.fastaction.enable = true;
+
+      autocomplete.nvim-cmp.enable = true;
+
+      autopairs.nvim-autopairs.enable = true;
+
+      binds.whichKey.enable = true;
+
+      utility.surround.enable = true;
+
+      statusline.lualine.enable = true;
+
+      comments.comment-nvim.enable = true;
 
       telescope = {
         enable = true;

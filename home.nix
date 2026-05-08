@@ -33,6 +33,7 @@ in {
       sensibleOnTop = true;
       shortcut = "a";
       keyMode = "vi";
+      mouse = true;
 
       extraConfig = ''
         bind -n M-h select-pane -L

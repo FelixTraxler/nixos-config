@@ -91,5 +91,6 @@ in {
     pkgs.htop
     pkgs.fortune
     pkgs.tree
+    pkgs.glow
   ];
 }

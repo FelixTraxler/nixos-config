@@ -60,7 +60,11 @@
         enable = true;
       };
 
-      utility.oil-nvim.enable = true;
+      utility.oil-nvim = {
+        enable = true;
+        gitStatus.enable = true;
+        setupOpts.view_options.show_hidden = true;
+      };
 
       git = {
         enable = true;

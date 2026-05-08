@@ -13,6 +13,10 @@
         providers.wl-copy.package = null;
       };
 
+      luaConfigRC.winborder = ''
+        vim.o.winborder = "rounded"
+      '';
+
       keymaps = [
         {
           key = "<leader>e";

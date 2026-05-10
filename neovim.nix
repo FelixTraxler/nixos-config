@@ -42,6 +42,8 @@
         softtabstop = 2;
         expandtab = true;
         foldlevel = 99; # start with all folds open
+        scrolloff = 10;
+        sidescrolloff = 10;
       };
 
       languages = {

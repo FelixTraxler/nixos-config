@@ -44,6 +44,8 @@
         foldlevel = 99; # start with all folds open
         scrolloff = 10;
         sidescrolloff = 10;
+
+        colorcolumn = "100";
       };
 
       languages = {

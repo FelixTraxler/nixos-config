@@ -172,6 +172,8 @@
     codex
     code-cursor
     claude-code
+
+    aws-cdk-cli
   ];
 
   fonts.packages = with pkgs; [

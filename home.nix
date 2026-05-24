@@ -41,6 +41,26 @@ in {
         bind -n M-k select-pane -U
         bind -n M-j select-pane -D
       '';
+
+      plugins = with pkgs; [
+        tmuxPlugins.sensible
+        {
+          plugin = tmuxPlugins.resurrect;
+          extraConfig = ''
+            set -g @resurrect-dir "$HOME/.tmux/resurrect"
+            set -g @resurrect-strategy-vim 'session'
+            set -g @resurrect-strategy-nvim 'session'
+            set -g @resurrect-capture-pane-contents 'on'
+          '';
+        }
+        {
+          plugin = tmuxPlugins.continuum;
+          extraConfig = ''
+            set -g @continuum-restore 'on'
+            set -g @continuum-save-interval '1'
+          '';
+        }
+      ];
     };
 
     firefox = {

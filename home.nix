@@ -124,6 +124,14 @@ in {
       '';
     };
 
+    obs-studio = {
+      enable = true;
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        obs-pipewire-audio-capture
+      ];
+    };
+
     kitty = {
       enable = true;
       font = {

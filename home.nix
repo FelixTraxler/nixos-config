@@ -25,6 +25,8 @@ in {
       shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake .";
         btr = "upower -b | grep percentage";
+        lg = "lazygit";
+        random = "openssl rand -base64 12";
       };
     };
 

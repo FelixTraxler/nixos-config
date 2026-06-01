@@ -1,77 +1,80 @@
 // -*- mode: jsonc -*-
 {
-    "layer": "top", 
-    "position": "top", 
-    "height": 30, 
-    "spacing": 4, 
-
-    // Choose the order of the modules
-    "modules-left": [
-        "hyprland/workspaces",
-        "custom/sep",
-        "hyprland/window",
-        "custom/sep"
-    ],
-    "modules-center": [
-    ],
-
-    "modules-right": [
-        "custom/sep",
-        "network",
-        "custom/sep",
-        "cpu",
-        "custom/sep",
-        "memory",
-        "custom/sep",
-        "custom/battery",
-        "custom/sep",
-        "clock"
-    ],
-
-    // Modules configuration
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "warp-on-scroll": false,
-        "format": "{name}",
-        "persistent-workspaces": {
-            "*" : 9
-        }
-    },
-    "hyprland/window" : {
-        "max-length": 40,
-        "seperate-outputs": false
-    },
-    "clock": {
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "interval": 2,
-        "format": "CPU: {usage}%",
-        "tooltip": false
-    },
-    "memory": {
-        "interval": 2,
-        "format": "Mem: {used:.1f}GiB"
-    },
-    "disk": {
-        "interval": 60,
-        "path": "/",
-        "format": "Disk: {free}"
-    },
-    "custom/battery": {
-        "interval": 2,
-        "return-type": "json",
-        "exec": "bash ~/.config/waybar/scripts/battery-status.sh",
-        "format": "{}",
-        "tooltip": true
-    },
-    "network": {
-        "format": "Online",
-        "format-disconnected": "Disconnected ⚠"
-    },
-    "custom/sep": {
-        "format" : "|",
-        "interval" : 0
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 4,
+  // Choose the order of the modules
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/sep",
+    "hyprland/window",
+    "custom/sep"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "custom/sep",
+    "network",
+    "custom/sep",
+    "cpu",
+    "custom/sep",
+    "memory",
+    "custom/sep",
+    "custom/battery",
+    "custom/sep",
+    "wireplumber",
+    "custom/sep",
+    "clock"
+  ],
+  // Modules configuration
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{name}",
+    "persistent-workspaces": {
+      "*": 9
     }
+  },
+  "hyprland/window": {
+    "max-length": 40,
+    "seperate-outputs": false
+  },
+  "clock": {
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+    "interval": 2,
+    "format": "{usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "interval": 2,
+    "format": "{used:.1f}GiB"
+  },
+  "disk": {
+    "interval": 60,
+    "path": "/",
+    "format": "Disk: {free}"
+  },
+  "custom/battery": {
+    "interval": 2,
+    "return-type": "json",
+    "exec": "bash ~/.config/waybar/scripts/battery-status.sh",
+    "format": "{}",
+    "tooltip": true
+  },
+  "network": {
+    "format": "Online",
+    "format-disconnected": "Disconnected ⚠"
+  },
+  "wireplumber": {
+    "format": "󰕾 {volume}%",
+    "format-muted": "󰖁",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+  "custom/sep": {
+    "format": "|",
+    "interval": 0
+  }
 }

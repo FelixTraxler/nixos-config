@@ -139,43 +139,56 @@ in {
         size = 12;
       };
       settings = {
-        background_opacity    = "0.92";
-        background            = "#0a0a0a";
-        foreground            = "#c8c8c8";
-        selection_background  = "#00cc55";
-        selection_foreground  = "#0a0a0a";
-        cursor_color          = "#00cc55";
+        background_opacity = "0.92";
+        background = "#0a0a0a";
+        foreground = "#c8c8c8";
+        selection_background = "#00cc55";
+        selection_foreground = "#0a0a0a";
+        cursor_color = "#00cc55";
         # Black
-        color0  = "#1a1a1a";
-        color8  = "#333333";
+        color0 = "#1a1a1a";
+        color8 = "#333333";
         # Red
-        color1  = "#cc3333";
-        color9  = "#ff4444";
+        color1 = "#cc3333";
+        color9 = "#ff4444";
         # Green
-        color2  = "#00cc55";
+        color2 = "#00cc55";
         color10 = "#00ff66";
         # Yellow
-        color3  = "#ccaa00";
+        color3 = "#ccaa00";
         color11 = "#ffcc00";
         # Blue (kept muted so it doesn't pop)
-        color4  = "#557799";
+        color4 = "#557799";
         color12 = "#6688aa";
         # Magenta (muted)
-        color5  = "#884488";
+        color5 = "#884488";
         color13 = "#aa55aa";
         # Cyan
-        color6  = "#009966";
+        color6 = "#009966";
         color14 = "#00bb77";
         # White
-        color7  = "#aaaaaa";
+        color7 = "#aaaaaa";
         color15 = "#dddddd";
 
-        cursor_shape          = "beam";
-        cursor_blink_interval = "0";
-        scrollback_lines      = "10000";
-        enable_audio_bell     = "no";
-        window_padding_width  = "8";
+        scrollback_lines = "10000";
+        enable_audio_bell = "no";
+        window_padding_width = "8";
       };
+    };
+  };
+
+  xdg.desktopEntries.firefox-video = {
+    name = "Firefox";
+    exec = "firefox %f";
+    mimeType = ["video/mp4" "video/webm" "video/ogg"];
+    noDisplay = true;
+    type = "Application";
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "video/mp4" = "firefox-video.desktop";
     };
   };
 

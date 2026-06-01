@@ -30,6 +30,12 @@ in {
       };
     };
 
+    direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
+
     tmux = {
       enable = true;
       sensibleOnTop = true;

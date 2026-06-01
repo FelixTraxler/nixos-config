@@ -66,6 +66,7 @@
         python.enable = true;
         typst.enable = true;
         zig.enable = true;
+        rust.enable = true;
       };
 
       ui.nvim-ufo.enable = true;

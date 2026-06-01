@@ -160,6 +160,7 @@
     brightnessctl
     playerctl
     lsof
+    gcc
 
     zoom-us
 
@@ -174,6 +175,10 @@
     claude-code
 
     aws-cdk-cli
+
+    cargo
+    rustc
+    rustfmt
   ];
 
   fonts.packages = with pkgs; [

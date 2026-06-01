@@ -7,6 +7,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems.apfs = true;
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [

@@ -224,5 +224,7 @@ in {
     pkgs.tree
     pkgs.glow
     pkgs.gh
+    pkgs.openssl
+    pkgs.unzip
   ];
 }

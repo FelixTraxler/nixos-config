@@ -27,6 +27,7 @@ in {
         btr = "upower -b | grep percentage";
         lg = "lazygit";
         random = "openssl rand -base64 12";
+        nv = "nvim .";
       };
     };
 

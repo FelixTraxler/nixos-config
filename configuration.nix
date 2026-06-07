@@ -179,6 +179,7 @@
 
     cargo
     rustc
+    rustup
     rustfmt
   ];
 

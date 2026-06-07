@@ -176,6 +176,7 @@
     claude-code
 
     aws-cdk-cli
+    awscli2
 
     cargo
     rustc

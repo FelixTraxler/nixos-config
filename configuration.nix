@@ -182,6 +182,8 @@
     rustc
     rustup
     rustfmt
+
+    age
   ];
 
   fonts.packages = with pkgs; [

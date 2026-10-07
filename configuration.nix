@@ -59,7 +59,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Europe/Dublin";
+  time.timeZone = "Europe/Vienna";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";

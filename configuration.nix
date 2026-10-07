@@ -184,6 +184,8 @@
     rustfmt
 
     age
+
+    geteduroam
   ];
 
   fonts.packages = with pkgs; [

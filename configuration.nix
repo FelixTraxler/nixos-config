@@ -57,6 +57,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  programs.nm-applet.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Vienna";
@@ -77,6 +78,7 @@
   };
 
   security.rtkit.enable = true;
+  security.pam.services.sddm.enableGnomeKeyring = true;
 
   services = {
     # Enable the X11 windowing system.
@@ -91,6 +93,7 @@
     };
 
     upower.enable = true;
+    gnome.gnome-keyring.enable = true;
 
     # Enable CUPS to print documents.
     printing.enable = true;
@@ -164,6 +167,7 @@
     waybar
     hyprpaper
     kdePackages.dolphin
+    seahorse
     brightnessctl
     playerctl
     lsof

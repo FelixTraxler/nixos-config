@@ -145,6 +145,12 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  environment.etc."opt/chrome/policies/managed/extensions.json".text = builtins.toJSON {
+    ExtensionInstallForcelist = [
+      "dbepggeogbaibhgnhhndojpepiihcmeb;https://clients2.google.com/service/update2/crx"
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     vim
     vscode

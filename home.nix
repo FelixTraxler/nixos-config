@@ -1,4 +1,9 @@
-{pkgs, lib, ...}: let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   snip = pkgs.writeShellScriptBin "snip" ''
     grim -l 0 -g "$(slurp)" - | wl-copy
   '';
@@ -228,6 +233,14 @@ in {
       modifier = "Mod4";
       terminal = "${pkgs.kitty}/bin/kitty";
       menu = "${pkgs.wofi}/bin/wofi --show drun";
+      floating.border = 8;
+      colors = lib.genAttrs ["focused" "focusedInactive" "unfocused" "urgent" "placeholder"] (_: {
+        border = "#000000";
+        background = "#000000";
+        text = "#ffffff";
+        indicator = "#000000";
+        childBorder = "#000000";
+      });
 
       # Keep the display scale usable on the laptop's high-resolution panel.
       output."*" = {
@@ -243,10 +256,12 @@ in {
         "type:touchpad".natural_scroll = "enabled";
       };
 
-      bars = [{
-        position = "bottom";
-        statusCommand = "${pkgs.i3status}/bin/i3status";
-      }];
+      bars = [
+        {
+          position = "bottom";
+          statusCommand = "${pkgs.i3status}/bin/i3status";
+        }
+      ];
 
       startup = [{command = "${pkgs.networkmanagerapplet}/bin/nm-applet --indicator";}];
 
@@ -258,6 +273,11 @@ in {
     };
 
     extraConfig = ''
+      # Apply the border to windows toggled into floating mode as well.
+      for_window [floating] border normal ${toString config.wayland.windowManager.sway.config.floating.border}
+      # Refresh existing floating windows when this config is reloaded.
+      exec_always ${pkgs.sway}/bin/swaymsg '[floating] border normal ${toString config.wayland.windowManager.sway.config.floating.border}'
+
       bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
       bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
       bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+

@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{pkgs, lib, ...}: let
   snip = pkgs.writeShellScriptBin "snip" ''
     grim -l 0 -g "$(slurp)" - | wl-copy
   '';
@@ -218,8 +218,56 @@ in {
     };
   };
 
-  home.file.".config/hypr".source = ./config/hypr;
-  home.file.".config/waybar".source = ./config/waybar;
+  programs.i3status.enable = true;
+
+  wayland.windowManager.sway = {
+    enable = true;
+    # Use the Sway package and session wrapper provided by NixOS.
+    package = null;
+    config = {
+      modifier = "Mod4";
+      terminal = "${pkgs.kitty}/bin/kitty";
+      menu = "${pkgs.wofi}/bin/wofi --show drun";
+
+      # Keep the display scale usable on the laptop's high-resolution panel.
+      output."*" = {
+        scale = "1.57";
+        bg = "#202020 solid_color";
+      };
+      input = {
+        "type:keyboard" = {
+          xkb_layout = "us";
+          repeat_delay = "200";
+          repeat_rate = "35";
+        };
+        "type:touchpad".natural_scroll = "enabled";
+      };
+
+      bars = [{
+        position = "bottom";
+        statusCommand = "${pkgs.i3status}/bin/i3status";
+      }];
+
+      startup = [{command = "${pkgs.networkmanagerapplet}/bin/nm-applet --indicator";}];
+
+      # Extend the standard Sway shortcuts with screenshots and screen locking.
+      keybindings = lib.mkOptionDefault {
+        "Print" = "exec ${snip}/bin/snip";
+        "Mod4+Control+l" = "exec ${pkgs.swaylock}/bin/swaylock -c 202020";
+      };
+    };
+
+    extraConfig = ''
+      bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+      bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+      bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+      bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+      bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+      bindsym --locked XF86AudioPlay exec playerctl play-pause
+      bindsym --locked XF86AudioNext exec playerctl next
+      bindsym --locked XF86AudioPrev exec playerctl previous
+    '';
+  };
   home.file.".local/share/applications/Zoom.desktop".text = ''
     [Desktop Entry]
     Name=Zoom Workplace

@@ -89,7 +89,7 @@
     displayManager = {
       sddm.enable = true;
       sddm.wayland.enable = true;
-      defaultSession = "hyprland";
+      defaultSession = "sway";
     };
 
     upower.enable = true;
@@ -144,7 +144,16 @@
     ];
   };
 
-  programs.hyprland.enable = true;
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -164,8 +173,6 @@
     tldr
     google-chrome
     kitty
-    waybar
-    hyprpaper
     kdePackages.dolphin
     seahorse
     brightnessctl

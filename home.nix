@@ -223,7 +223,42 @@ in {
     };
   };
 
-  programs.i3status.enable = true;
+  programs.i3status-rust = {
+    enable = true;
+    bars.default.blocks = [
+      { block = "net"; }
+      { block = "battery"; }
+      {
+        block = "disk_space";
+        path = "/";
+        info_type = "available";
+        format = " DISK $available ";
+      }
+      {
+        block = "load";
+        format = " LOAD $1m ";
+      }
+      {
+        block = "memory";
+        format = " MEM $mem_used / $mem_total ";
+      }
+      {
+        block = "sound";
+        driver = "pulseaudio";
+        format = " VOL {$volume|muted} ";
+      }
+      {
+        block = "backlight";
+        format = " BRIGHT $brightness ";
+        root_scaling = 1.0;
+      }
+      {
+        block = "time";
+        interval = 1;
+        format = " $timestamp.datetime(f:'%Y-%m-%d %H:%M:%S') ";
+      }
+    ];
+  };
 
   wayland.windowManager.sway = {
     enable = true;
@@ -262,7 +297,7 @@ in {
       bars = [
         {
           position = "bottom";
-          statusCommand = "${pkgs.i3status}/bin/i3status";
+          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3status-rust/config-default.toml";
         }
       ];
 

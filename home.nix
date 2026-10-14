@@ -253,7 +253,10 @@ in {
           repeat_delay = "200";
           repeat_rate = "35";
         };
-        "type:touchpad".natural_scroll = "enabled";
+        "type:touchpad" = {
+          natural_scroll = "enabled";
+          tap = "enabled";
+        };
       };
 
       bars = [

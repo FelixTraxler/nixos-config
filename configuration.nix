@@ -196,6 +196,9 @@
     age
 
     geteduroam
+
+    uv
+    vscode
   ];
 
   fonts.packages = with pkgs; [

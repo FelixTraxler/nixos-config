@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.nvf = {
     enable = true;
 
@@ -34,6 +34,13 @@
       lsp = {
         enable = true;
         formatOnSave = true;
+      };
+
+      extraPlugins.lean = {
+        package = pkgs.vimPlugins.lean-nvim;
+        setup = ''
+          require('lean').setup { mappings = true }
+        '';
       };
 
       options = {

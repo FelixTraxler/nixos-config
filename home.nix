@@ -184,6 +184,15 @@ in {
         window_padding_width = "8";
       };
     };
+
+    vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        vscodevim.vim
+        yzhang.markdown-all-in-one
+        ms-toolsai.jupyter
+      ];
+    };
   };
 
   home.pointerCursor = {
@@ -235,5 +244,6 @@ in {
     pkgs.gh
     pkgs.openssl
     pkgs.unzip
+    pkgs.elan
   ];
 }

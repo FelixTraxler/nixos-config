@@ -8,6 +8,14 @@
     grim -l 0 -g "$(slurp)" - | wl-copy
   '';
 
+  forceKillFocused = pkgs.writeShellScriptBin "force-kill-focused" ''
+    pid=$(${pkgs.sway}/bin/swaymsg -t get_tree | ${pkgs.jq}/bin/jq -r \
+      '.. | objects | select(.focused? == true) | .pid // empty')
+    if [[ "$pid" =~ ^[0-9]+$ ]] && (( pid > 1 )); then
+      kill -KILL -- "$pid"
+    fi
+  '';
+
   zoomWayland = pkgs.writeShellScriptBin "zoom" ''
     exec ${pkgs.zoom-us}/bin/zoom \
       --enable-features=UseOzonePlatform,WaylandWindowDecorations \
@@ -329,6 +337,7 @@ in {
 
       # Extend the standard Sway shortcuts with screenshots and screen locking.
       keybindings = lib.mkOptionDefault {
+        "Mod4+Control+Shift+q" = "exec ${forceKillFocused}/bin/force-kill-focused";
         "Print" = "exec ${snip}/bin/snip";
         "Mod4+Control+l" = "exec ${pkgs.swaylock}/bin/swaylock -c 202020";
         "Mod4+e" = "exec ${pkgs.kdePackages.dolphin}/bin/dolphin";

@@ -100,6 +100,19 @@ in {
 
     wofi = {
       enable = true;
+      settings = {
+        show = "drun";
+        prompt = "Search applications (browser, files, editor…)";
+        allow_images = true;
+        no_actions = true;
+        image_size = 16;
+        drun-display_generic = true;
+        drun-ignore_metadata = false;
+        insensitive = true;
+        term = "${pkgs.kitty}/bin/kitty";
+        width = 650;
+        height = 450;
+      };
       style = ''
         * {
           font-family: "JetBrainsMono Nerd Font", monospace;
@@ -127,6 +140,9 @@ in {
         #entry {
           padding: 6px 12px;
           color: #c8c8c8;
+        }
+        #img {
+          margin-right: 12px;
         }
         #entry:selected {
           background-color: #111111;
@@ -208,6 +224,14 @@ in {
     x11.enable = true;
   };
 
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
+
   xdg.desktopEntries.firefox-video = {
     name = "Firefox";
     exec = "firefox %f";
@@ -226,8 +250,8 @@ in {
   programs.i3status-rust = {
     enable = true;
     bars.default.blocks = [
-      { block = "net"; }
-      { block = "battery"; }
+      {block = "net";}
+      {block = "battery";}
       {
         block = "disk_space";
         path = "/";
@@ -307,6 +331,7 @@ in {
       keybindings = lib.mkOptionDefault {
         "Print" = "exec ${snip}/bin/snip";
         "Mod4+Control+l" = "exec ${pkgs.swaylock}/bin/swaylock -c 202020";
+        "Mod4+e" = "exec ${pkgs.kdePackages.dolphin}/bin/dolphin";
       };
     };
 

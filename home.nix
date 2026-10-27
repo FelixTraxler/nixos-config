@@ -323,6 +323,7 @@ in {
         };
         "type:touchpad" = {
           natural_scroll = "enabled";
+          scroll_factor = "0.5";
           tap = "enabled";
         };
       };

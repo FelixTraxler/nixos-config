@@ -41,6 +41,7 @@ in {
         lg = "lazygit";
         random = "openssl rand -base64 12";
         nv = "nvim .";
+        tuvpn = "sudo openconnect --useragent='AnyConnect OpenConnect' --no-external-auth --authgroup=2_Alles_getunnelt --user=e12217071@student.tuwien.ac.at vpn.tuwien.ac.at";
       };
     };
 

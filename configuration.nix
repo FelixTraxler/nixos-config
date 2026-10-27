@@ -203,6 +203,7 @@
     age
 
     geteduroam
+    openconnect
 
     uv
     vscode

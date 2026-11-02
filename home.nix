@@ -383,6 +383,7 @@ in {
     pkgs.fortune
     pkgs.tree
     pkgs.glow
+    pkgs.obsidian
     pkgs.gh
     pkgs.openssl
     pkgs.unzip

@@ -9,6 +9,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems.apfs = true;
 
+  zramSwap.enable = true;
+
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs

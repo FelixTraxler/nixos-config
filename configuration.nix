@@ -193,6 +193,7 @@
     codex
     code-cursor
     claude-code
+    t3code
 
     aws-cdk-cli
     awscli2

@@ -219,7 +219,7 @@
   ];
 
   # Allow Expo Go / Metro from devices on the local network.
-  networking.firewall.allowedTCPPorts = [8081 19000 19001 19002];
+  networking.firewall.allowedTCPPorts = [3773 8081 19000 19001 19002];
   networking.firewall.allowedUDPPorts = [19000 19001 19002];
 
   # This value determines the NixOS release from which the default

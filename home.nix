@@ -321,6 +321,7 @@ in {
       input = {
         "type:keyboard" = {
           xkb_layout = "us";
+          xkb_options = "compose:ralt";
           repeat_delay = "200";
           repeat_rate = "35";
         };

@@ -33,8 +33,11 @@ in {
   programs = {
     home-manager.enable = true;
 
+    fzf.enable = true;
+
     bash = {
       enable = true;
+      initExtra = builtins.readFile ./worktrees.bash;
       shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake .";
         btr = "upower -b | grep percentage";

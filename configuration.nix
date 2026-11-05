@@ -93,6 +93,7 @@
     xserver.enable = true;
 
     mullvad-vpn.enable = true;
+    tailscale.enable = true;
 
     displayManager = {
       sddm.enable = true;

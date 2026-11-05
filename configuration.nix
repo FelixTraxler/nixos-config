@@ -12,6 +12,12 @@
   zramSwap.enable = true;
 
   programs.nix-ld.enable = true;
+
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-curses;
+  };
+
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
@@ -212,6 +218,8 @@
 
     uv
     vscode
+
+    gnupg
   ];
 
   fonts.packages = with pkgs; [
